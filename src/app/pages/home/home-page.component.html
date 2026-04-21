@@ -1,0 +1,101 @@
+<app-page-hero [content]="content.hero" />
+
+<section class="site-section">
+  <div class="container">
+    <app-section-title
+      eyebrow="Capabilities"
+      title="Consulting support across the Microsoft enterprise landscape"
+      description="Meridian's work spans business applications, data, infrastructure, and ongoing delivery support so organizations can modernize with a more connected operating model."
+      [center]="true"
+    />
+
+    <div class="pillars-grid">
+      @for (pillar of content.pillars; track pillar.title) {
+        <a class="surface-card service-pillar" [routerLink]="pillar.path">
+          <div class="icon-badge"><app-icon [name]="pillar.icon" /></div>
+          <h3>{{ pillar.title }}</h3>
+          <p>{{ pillar.description }}</p>
+          <span class="text-link">Learn more</span>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="site-section section-soft">
+  <div class="container">
+    <app-section-title
+      title="Driving real business results"
+      description="The focus is not on trend-driven messaging. It is on cleaner operations, more usable information, and a stronger enterprise foundation."
+      [center]="true"
+    />
+
+    <div class="outcomes-grid">
+      @for (outcome of content.outcomes; track outcome.title) {
+        <article class="surface-card outcome-card">
+          <div class="icon-badge subtle"><app-icon [name]="outcome.icon" /></div>
+          <h3>{{ outcome.title }}</h3>
+          <p>{{ outcome.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="site-section">
+  <div class="container split-grid feature-grid">
+    <div>
+      <app-section-title
+        eyebrow="Featured engagement"
+        [title]="content.featuredEngagement.title"
+        description="A concise view of the enterprise priorities Meridian's original materials consistently point back to."
+      />
+
+      <div class="feature-copy">
+        <span class="pill">{{ content.featuredEngagement.category }}</span>
+        <p><strong>Challenge</strong> {{ content.featuredEngagement.challenge }}</p>
+        <p><strong>Solution</strong> {{ content.featuredEngagement.solution }}</p>
+        <p><strong>Outcome</strong> {{ content.featuredEngagement.outcome }}</p>
+        <a class="button secondary" routerLink="/case-studies">Read More</a>
+      </div>
+    </div>
+
+    <div class="feature-visual surface-card">
+      <div class="feature-visual-art"></div>
+      <div class="feature-visual-copy">
+        <h3>Consulting that connects strategy, systems, and operations.</h3>
+        <p>
+          Meridian's strongest story is not flashy. It is the ability to support enterprise teams
+          with practical planning, delivery structure, and long-term modernization work.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="site-section section-soft">
+  <div class="container split-grid">
+    <div>
+      <app-section-title
+        eyebrow="About Meridian"
+        [title]="content.aboutPreview.title"
+        [description]="content.aboutPreview.description"
+      />
+      <ul class="list-clean">
+        @for (item of content.aboutPreview.bullets; track item) {
+          <li><app-icon name="check" />{{ item }}</li>
+        }
+      </ul>
+      <a class="button secondary" routerLink="/about">Learn About Meridian</a>
+    </div>
+
+    <div class="surface-card profile-card">
+      <p class="eyebrow">Enterprise consulting profile</p>
+      <h3>Strategic. Reliable. Delivery-minded.</h3>
+      <p>
+        Meridian's original materials describe a firm built around practical technology solutions,
+        integrated service models, and dependable support across enterprise programs.
+      </p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,17 @@
+<app-page-hero [content]="content.hero" />
+
+<section class="site-section">
+  <div class="container">
+    <app-section-title
+      eyebrow="Representative engagements"
+      title="Consulting priorities grounded in Meridian's source materials"
+      description="These summaries use Meridian's published positioning around client relationships, delivery models, and enterprise solution areas without inventing unsupported client claims."
+    />
+
+    <div class="case-grid">
+      @for (study of content.studies; track study.title) {
+        <app-case-study-card [study]="study" />
+      }
+    </div>
+  </div>
+</section>

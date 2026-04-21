@@ -1,0 +1,26 @@
+<app-page-hero [content]="content.hero" />
+
+<section class="site-section">
+  <div class="container">
+    <app-section-title
+      eyebrow="Service groups"
+      title="Capabilities organized around enterprise needs"
+      description="Each service area below is grounded in Meridian's source materials and rewritten for a clearer advisory-oriented presentation."
+    />
+
+    <div class="services-grid">
+      @for (service of content.serviceCards; track service.id) {
+        <article class="surface-card service-detail-card" [attr.id]="service.id">
+          <div class="icon-badge"><app-icon [name]="service.icon" /></div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+          <ul class="list-clean compact">
+            @for (bullet of service.bullets; track bullet) {
+              <li><app-icon name="arrow-right" />{{ bullet }}</li>
+            }
+          </ul>
+        </article>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,54 @@
+:host {
+  display: block;
+}
+
+.contact-form-card {
+  padding: clamp(1.35rem, 2.2vw, 1.8rem);
+}
+
+.contact-form-card h3 {
+  margin-top: 0;
+}
+
+.contact-form-card .muted-text {
+  margin-top: 0.6rem;
+  max-width: 64ch;
+}
+
+.form-grid {
+  gap: 0.95rem;
+}
+
+.form-grid label {
+  gap: 0.4rem;
+}
+
+.form-grid input,
+.form-grid textarea,
+.form-grid select {
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease;
+}
+
+.form-grid input:focus,
+.form-grid textarea:focus,
+.form-grid select:focus {
+  border-color: rgba(74, 142, 210, 0.65);
+  box-shadow: 0 0 0 4px rgba(78, 166, 247, 0.14);
+  background: #fff;
+  outline: none;
+}
+
+.form-actions {
+  margin-top: 0.25rem;
+}
+
+.form-actions .button {
+  min-width: 10.5rem;
+}
+
+.status-message {
+  margin-top: 0.7rem;
+}

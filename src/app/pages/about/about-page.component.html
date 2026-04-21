@@ -1,0 +1,62 @@
+<app-page-hero [content]="content.hero" />
+
+<section class="site-section">
+  <div class="container split-grid">
+    <div>
+      <app-section-title eyebrow="Company introduction" title="Why Meridian" [description]="content.story" />
+    </div>
+    <div class="surface-card profile-card">
+      <p class="eyebrow">Microsoft-focused expertise</p>
+      <h3>Consulting aligned to enterprise systems and operations</h3>
+      <p>
+        Meridian's source materials consistently position the firm around enterprise applications,
+        outsourcing, integration, and practical delivery support rather than product-style
+        messaging.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="site-section section-soft">
+  <div class="container">
+    <app-section-title
+      eyebrow="Why Meridian"
+      title="A more credible consulting story"
+      description="The themes below are drawn from the source materials and presented in a cleaner, more modern structure."
+      [center]="true"
+    />
+    <div class="principles-grid">
+      @for (item of content.whyMeridian; track item.title) {
+        <article class="surface-card principle-card">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="site-section">
+  <div class="container">
+    <app-section-title
+      eyebrow="Delivery approach"
+      title="A structured consulting and delivery sequence"
+      description="This gives the site a more enterprise-ready narrative without overclaiming or sounding like a software product company."
+    />
+
+    <div class="approach-grid">
+      @for (step of content.approach; track step.title; let index = $index) {
+        <article class="surface-card approach-card">
+          <span class="step-index">0{{ index + 1 }}</span>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.description }}</p>
+        </article>
+      }
+    </div>
+
+    <div class="surface-card note-card">
+      <p class="eyebrow">Delivery footprint</p>
+      <p>{{ content.deliveryProfile }}</p>
+    </div>
+  </div>
+</section>

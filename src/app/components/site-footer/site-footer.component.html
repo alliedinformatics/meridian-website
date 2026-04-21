@@ -1,0 +1,51 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand-mark" routerLink="/">
+        <img src="images/logo_icon.png" alt="Meridian Software Solutions" />
+        <span>
+          <strong>{{ brand.shortName }}</strong>
+          <small>{{ brand.tagline }}</small>
+        </span>
+      </a>
+      <p>
+        Meridian Software Solutions is a global IT consultancy focused on enterprise applications,
+        analytics, cloud advisory, and managed delivery support.
+      </p>
+    </div>
+
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <ul class="footer-links contact-list">
+        <li>
+          <span class="icon-badge subtle"><app-icon name="phone" /></span>
+          <div class="contact-copy">
+            <span class="contact-label">Phone</span>
+            <a [href]="'tel:' + contact.phone">{{ contact.phone }}</a>
+          </div>
+        </li>
+        <li>
+          <span class="icon-badge subtle"><app-icon name="email" /></span>
+          <div class="contact-copy">
+            <span class="contact-label">Email</span>
+            <a [href]="'mailto:' + contact.email">{{ contact.email }}</a>
+          </div>
+        </li>
+        <li>
+          <span class="icon-badge subtle"><app-icon name="location" /></span>
+          <div class="contact-copy">
+            <span class="contact-label">Office</span>
+            <p>{{ contact.addressLines[0] }}</p>
+            <p>{{ contact.addressLines[1] }}</p>
+            <p>{{ contact.addressLines[2] }}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>© 2026 {{ brand.companyName }}. All rights reserved.</p>
+    <!-- <p>Corporate office in Georgia with delivery support spanning the United States and India.</p> -->
+  </div>
+</footer>

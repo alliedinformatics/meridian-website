@@ -1,0 +1,49 @@
+<section class="page-hero">
+  <div class="container hero-shell">
+    <div class="hero-copy">
+      @if (content().eyebrow) {
+        <p class="eyebrow">{{ content().eyebrow }}</p>
+      }
+      <h1>{{ content().title }}</h1>
+      <p class="hero-lead">{{ content().description }}</p>
+
+      @if (content().actions?.length) {
+        <div class="hero-actions">
+          @for (action of content().actions; track action.label) {
+            @if (action.path.startsWith('mailto:')) {
+              <a class="button" [class.secondary]="action.variant === 'secondary'" [href]="action.path">
+                {{ action.label }}
+              </a>
+            } @else {
+              <a
+                class="button"
+                [class.secondary]="action.variant === 'secondary'"
+                [routerLink]="action.path"
+              >
+                {{ action.label }}
+              </a>
+            }
+          }
+        </div>
+      }
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-glow hero-glow-one"></div>
+      <div class="hero-glow hero-glow-two"></div>
+      <div class="hero-cityline"></div>
+      <div class="hero-panel">
+        <span>Enterprise Consulting</span>
+        <strong>Microsoft-focused strategy, delivery, and operations support.</strong>
+      </div>
+    </div>
+  </div>
+
+  @if (content().highlights?.length) {
+    <div class="container hero-highlights">
+      @for (highlight of content().highlights; track highlight) {
+        <span>{{ highlight }}</span>
+      }
+    </div>
+  }
+</section>

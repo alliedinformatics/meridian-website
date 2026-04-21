@@ -1,0 +1,39 @@
+:host {
+  display: block;
+}
+
+.principle-card,
+.approach-card {
+  padding: 1.45rem;
+}
+
+.principle-card h3,
+.approach-card h3 {
+  margin-top: 0;
+}
+
+.principle-card p,
+.approach-card p {
+  margin-top: 0.7rem;
+}
+
+.approach-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.approach-card .step-index {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 2rem;
+}
+
+.note-card {
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .approach-grid {
+    grid-template-columns: 1fr;
+  }
+}

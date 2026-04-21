@@ -1,0 +1,70 @@
+<app-page-hero [content]="content.hero" />
+
+<section class="site-section">
+  <div class="container contact-layout">
+    <div class="contact-stack">
+      <app-section-title
+        eyebrow="Business contact"
+        title="Contact Meridian"
+        description="Use the form for consulting discussions, service questions, or general business inquiries."
+      />
+
+      <div class="surface-card contact-info-card">
+        <div class="contact-item">
+          <span class="icon-badge subtle"><app-icon name="phone" /></span>
+          <div>
+            <h3>Call</h3>
+            <p>{{ details.phone }}</p>
+            <p>Fax: {{ details.fax }}</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span class="icon-badge subtle"><app-icon name="email" /></span>
+          <div>
+            <h3>Email</h3>
+            <p>{{ details.email }}</p>
+            <p>{{ details.website }}</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span class="icon-badge subtle"><app-icon name="location" /></span>
+          <div>
+            <h3>Office</h3>
+            @for (line of details.addressLines; track line) {
+              <p>{{ line }}</p>
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="surface-card office-card">
+        <p class="eyebrow">Office location</p>
+        <h3>Corporate office and delivery footprint</h3>
+        <p>{{ content.officeNote }}</p>
+      </div>
+    </div>
+
+    <app-contact-form />
+  </div>
+</section>
+
+<section class="site-section section-soft">
+  <div class="container">
+    <app-section-title
+      eyebrow="Inquiry expectations"
+      title="Helpful guidance before you reach out"
+      [center]="true"
+    />
+
+    <div class="faq-grid">
+      @for (item of content.inquiryExpectations; track item.question) {
+        <article class="surface-card faq-card">
+          <h3>{{ item.question }}</h3>
+          <p>{{ item.answer }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

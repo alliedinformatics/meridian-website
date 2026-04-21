@@ -1,0 +1,42 @@
+<app-page-hero [content]="content.hero" />
+
+<section class="site-section">
+  <div class="container">
+    <app-section-title
+      eyebrow="Industries served"
+      title="Where Meridian's consulting approach applies"
+      description="These sectors reflect the enterprise contexts referenced in the source materials and your redesign brief. The language stays intentionally measured and consulting-oriented."
+    />
+
+    <div class="industry-grid">
+      @for (industry of content.industries; track industry.title) {
+        <article class="surface-card industry-card">
+          <div class="icon-badge"><app-icon [name]="industry.icon" /></div>
+          <h3>{{ industry.title }}</h3>
+          <p>{{ industry.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="site-section section-soft">
+  <div class="container">
+    <app-section-title
+      eyebrow="How Meridian works"
+      title="A consultancy model, not a one-size-fits-all template"
+      description="The industry story is strongest when it stays grounded in operating context, business needs, and realistic transformation planning."
+      [center]="true"
+    />
+
+    <div class="principles-grid">
+      @for (item of content.approach; track item.title) {
+        <article class="surface-card principle-card">
+          <div class="icon-badge subtle"><app-icon [name]="item.icon" /></div>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

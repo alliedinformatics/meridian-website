@@ -1,0 +1,59 @@
+<div class="surface-card contact-form-card">
+  <h3>Send an inquiry</h3>
+  <p class="muted-text">
+    Share a few details about your environment or project priorities and Meridian can follow up
+    with the right next conversation.
+  </p>
+
+  @if (submitted()) {
+    <div class="status-message success">
+      Your default email app was opened with a prefilled inquiry draft. Send it to complete your
+      request.
+    </div>
+  }
+
+  <form class="form-grid" [formGroup]="form" (ngSubmit)="submit()">
+    <label>
+      <span>Name</span>
+      <input type="text" formControlName="name" />
+      @if (showError('name')) {
+        <small class="field-error">Name is required.</small>
+      }
+    </label>
+
+    <label>
+      <span>Work Email</span>
+      <input type="email" formControlName="email" />
+      @if (showError('email')) {
+        <small class="field-error">Please enter a valid email.</small>
+      }
+    </label>
+
+    <label>
+      <span>Organization</span>
+      <input type="text" formControlName="organization" />
+    </label>
+
+    <label>
+      <span>Topic</span>
+      <select formControlName="topic">
+        <option value="consulting">Consulting inquiry</option>
+        <option value="services">Services discussion</option>
+        <option value="careers">Careers</option>
+        <option value="other">Other</option>
+      </select>
+    </label>
+
+    <label class="full-span">
+      <span>Message</span>
+      <textarea rows="6" formControlName="message"></textarea>
+      @if (showError('message')) {
+        <small class="field-error">Please add a short message.</small>
+      }
+    </label>
+
+    <div class="full-span form-actions">
+      <button class="button" type="submit">Send Inquiry</button>
+    </div>
+  </form>
+</div>
